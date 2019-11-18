@@ -78,8 +78,6 @@ public class Course {
 		{
 			output += getModlueNames()[i] + "\n";
 	    }
-		output += "Start datae:" + getStartDate() + "\n";
-		output += "End datae:" + getEndDate() + "\n";
 		return output;
 	}
 }

@@ -35,9 +35,7 @@ public class CourseTest {
 				"Ambrose\n" + 
 				"Modules in this course are:\n" + 
 				"Software Engineering\n" + 
-				"Systems Modelling and Simulation\n" + 
-				"Start datae:2019-09-09T10:11:12.123+01:00\n" + 
-				"End datae:2020-05-16T10:11:12.123+01:00\n";
+				"Systems Modelling and Simulation\n";
 		assertEquals(expected_csIT, csIT.toString());
 		
 	}
