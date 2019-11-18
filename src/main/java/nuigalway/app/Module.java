@@ -27,21 +27,7 @@ public class Module {
 	}
 	
 	public Student[] getStudents()
-	{
-		for (Student student: students) 
-		{
-			for (int i = 0; i < student.getModules().length; i++) 
-			{      
-				System.out.println(student.getModules().toString());
-				
-//				if(this.name == student.getModules()[i])
-//				{
-//					studentList.add(student);
-//				}
-				
-			}
-		}
-		System.out.println(students[0].getModules());
+	{		
 		return students;
 	}
 	
@@ -50,12 +36,31 @@ public class Module {
 		return courses;
 	}
 	
+	public Student[] getStudentsRelevant()
+	{
+		Student[] registeredStudents = new Student[2];
+		for (int i = 0; i < students.length; i++) 
+		{  
+			for (int j = 0; j < students.length; j++) 
+			{
+				Module[] mod = students[i].getModules();
+				
+				if(this.name == mod[j].getName())
+				{
+					registeredStudents[i] = students[i];
+				}
+			}
+		}
+		
+		return registeredStudents;
+	}
+	
 	public String toString()
 	{
 		String output = getName() + ": \n";
 		
-		 for(Student stud:getStudents()) {
-			 output += stud + "\n";
+		 for(int i = 0; i < getStudentsRelevant().length; i++) {
+			 output += getStudentsRelevant()[i] + ", " + getCourses()[0].getName() + "\n";
 	        }
 		return output;
 	}

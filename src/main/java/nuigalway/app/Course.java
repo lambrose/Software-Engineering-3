@@ -44,9 +44,43 @@ public class Course {
 		return endDate;
 	}
 	
+	public String[] getStudentNames()
+	{
+		String[] registeredStudents = new String[2];
+		for (int i = 0; i < students.length; i++) 
+		{  
+			registeredStudents[i] = students[i].getName();
+		}
+		return registeredStudents;
+	}
+	
+	public String[] getModlueNames()
+	{
+		String[] registeredModules = new String[2];
+		for (int i = 0; i < modules.length; i++) 
+		{  
+			registeredModules[i] = modules[i].getName();
+		}
+		
+		return registeredModules;
+	}
+	
 	public String toString()
 	{
-		return getName() + "\t" + getModule() + "\t" + getStudents() + "\t" +  getStartDate() + "\t" +  getEndDate();
+		String output = "Course: " + getName() + "\n";
+		output += "Students in this course are:\n";
+		for(int i = 0; i < getStudentNames().length; i++) 
+		{
+			output += getStudentNames()[i] + "\n";
+	    }
+		output += "Modules in this course are:\n";
+		for(int i = 0; i < getModlueNames().length; i++) 
+		{
+			output += getModlueNames()[i] + "\n";
+	    }
+		output += "Start datae:" + getStartDate() + "\n";
+		output += "End datae:" + getEndDate() + "\n";
+		return output;
 	}
 }
 
